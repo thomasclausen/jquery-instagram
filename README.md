@@ -7,7 +7,7 @@ jQuery plugin that lets you show the latest photos from your Instagram profile.
 
 ### Examples
 
-The plugin can be seen live here: [http://beta.thomasclausen.dk/instagram-gallery/](http://beta.thomasclausen.dk/instagram-gallery/)
+The plugin can be seen live here: [http://beta.thomasclausen.dk/instagram/](http://beta.thomasclausen.dk/instagram/)
 
 ### Usage
 
