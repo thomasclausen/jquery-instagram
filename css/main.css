@@ -1,0 +1,100 @@
+﻿
+body
+{
+    font-family: 'Merriweather' , arial, serif;
+    background-image: url("../images/rtlxuwr.png");
+    background-repeat: repeat;
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #777;
+}
+.imagediv
+{
+    height: 100px;
+    width: 115px;
+    float: left;
+    margin: 7px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    overflow:hidden;
+    text-align: center;
+}
+.icon
+{
+    background-image: url("../images/logos.png");
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 62px;
+    cursor:pointer;
+}
+.icon-chzb-u
+{
+    background-position: 0 -102px;
+}
+.icon-cutb-u
+{
+    background-position: 0 -50px;
+}
+.icon-ls-u
+{
+    background-position: 0 0;
+}
+.icon-tap-u
+{
+    background-position: 0 -155px;
+}
+.icon-box-u
+{
+    background-position: 0 -205px;
+}
+.icon-cstr-u
+{
+    background-position: 0 -253px;
+}
+.icon-chzb-d
+{
+    background-position: -64px -102px;
+}
+.icon-cutb-d
+{
+    background-position: -64px -50px;
+}
+.icon-ls-d
+{
+    background-position: -64px 0;
+}
+.icon-tap-d
+{
+    background-position: -64px -155px;
+}
+.icon-box-d
+{
+    background-position: -64px -205px;
+}
+.icon-cstr-d
+{
+    background-position: -64px -253px;
+}
+.icon-label
+{
+    font-size: 204%;
+    padding-top: 14px;
+    text-decoration: none;
+    cursor:pointer;
+}
+.icon-label a:visited
+{
+    color: #331D0F;
+    text-decoration: none;
+}
+.icon-label a:hover
+{
+    color: #331D0F;
+    text-decoration: none;
+}
+.icon-label a
+{
+    color: #331D0F;
+    text-decoration: none;
+}

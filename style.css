@@ -1,0 +1,105 @@
+@-moz-keyframes update-spinner {
+	from { -moz-transform: rotate(0deg); }
+	to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes update-spinner {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(360deg); }
+}
+@-ms-keyframes update-spinner {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(360deg); }
+}
+@keyframes update-spinner {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* GLOBAL */
+body { font: 11px Arial, Helvetica, Verdana, sans-serif; line-height: 16px; color: #333; background: #fff; }
+h1 { font-size: 14px; line-height: 1.25em; margin: 0 0 16px 0; }
+h2 { font: 24px Arial, Helvetica, Verdana, sans-serif; font-style: normal; font-weight: 300; line-height: 1.25em; margin: 0 0 18px 0; }
+h3, h4, h5, h6 { font-size: 11px; line-height: 1.25em; margin: 0; }
+p { margin-bottom: 16px; }
+a { color: #000; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+sup, sub { font-size: 0.7em; vertical-align: baseline; position: relative; top: -0.4em; }
+sub { top: 0.4em; }
+
+#wrap { width: 480px; padding: 20px 0; margin: 0 auto; }
+
+.arrow_box { padding: 30px; margin: 32px 0 30px 0; background: #b3d9f3; position: relative; border-radius: 6px; }
+.arrow_box:before, .arrow_box:after { width: 0; height: 0; border: solid transparent; position: absolute; content: ' '; pointer-events: none; }
+.arrow_box:before { margin-left: -20px; border-width: 20px; border-bottom-color: #b3d9f3; bottom: 100%; left: 50%; }
+.arrow_box.extra:after { margin-left: -20px; border-width: 20px; border-top-color: #b3d9f3; top: 100%; left: 50%; }
+.arrow_box p { margin-bottom: 0; }
+
+/* FACEBOOK - WALL */
+.instagram_gallery.standard { min-height: 200px; margin: 0 -40px 40px -40px; border-top: 2px solid #535353; border-bottom: 2px solid #535353; background: #eee; position: relative; }
+
+.instagram_gallery.standard .instagram-loading { width: 16px; height: 16px; margin: -8px 0 0 -8px; background: url('images/loader.png') no-repeat 50% 50%; position: absolute; top: 100px; left: 50%; }
+.instagram_gallery.standard .instagram-loading { -moz-animation: update-spinner 1s linear infinite; -webkit-animation: update-spinner 1s linear infinite; -ms-animation: update-spinner 1s linear infinite; animation: update-spinner 1s linear infinite; }
+
+.instagram_gallery.standard li { padding: 10px 10px 10px 72px; border-top: 1px solid #d4d4d4; display: none; position: relative; }
+.instagram_gallery.standard li:first-child { border-top: none; }
+
+.instagram_gallery.standard li .meta-header { }
+.instagram_gallery.standard li .meta-header .avatar { width: 50px; height: 50px; border: 1px solid #999; position: absolute; top: 10px; left: 10px; }
+.instagram_gallery.standard li .meta-header .author { font-weight: bold; }
+.instagram_gallery.standard li .meta-header .date { display: none; }
+
+.instagram_gallery.standard li .media { color: #8a8a8a; margin: 10px 0; display: inline; position: relative; }
+.instagram_gallery.standard li .media .cover_photo { }
+.instagram_gallery.standard li .media .cover_photo img { max-width: 472px; height: auto; padding: 2px; margin-right: 10px; border: 1px solid #a1a1a1; float: left; }
+.instagram_gallery.standard li .media .amount { width: 20px; height: 20px; font-weight: bold; line-height: 20px; color: #fff; text-align: center; background: #369; border-radius: 50%; position: absolute; top: 0; right: 0; }
+.instagram_gallery.standard li .media .amount .text { display: none; }
+.instagram_gallery.standard li .media .media-meta { float: left; display: table; }
+.instagram_gallery.standard li .media .media-meta .name { font-weight: bold; }
+.instagram_gallery.standard li .media .media-meta .caption { font-style: italic; }
+.instagram_gallery.standard li .media .media-meta .description { }
+
+.instagram_gallery.standard li .meta-footer { font-size: 9px; line-height: 16px; color: #a1a1a1; clear: both; }
+.instagram_gallery.standard li .meta-footer .seperator { padding: 0 4px; }
+.instagram_gallery.standard li .meta-footer .date { }
+.instagram_gallery.standard li .meta-footer .likes { }
+.instagram_gallery.standard li .meta-footer .comments { }
+.instagram_gallery.standard li .meta-footer .actions { }
+.instagram_gallery.standard li .meta-footer .actions .like { }
+.instagram_gallery.standard li .meta-footer .actions .comment { }
+
+.instagram_gallery.standard li ul.like-list { margin-top: 10px; display: none; }
+.instagram_gallery.standard li ul.like-list li.like { font-size: 11px; line-height: 16px; margin-top: 2px; border-top: none; background: #e0e0e0; display: block; }
+.instagram_gallery.standard li ul.like-list li.like:first-child { margin-top: 0; }
+.instagram_gallery.standard li ul.like-list li.like .meta-header .author { }
+
+.instagram_gallery.standard li ul.comment-list { margin-top: 10px; }
+.instagram_gallery.standard li ul.comment-list li.comment { font-size: 11px; line-height: 16px; margin-top: 2px; border-top: none; background: #e0e0e0; display: block; }
+.instagram_gallery.standard li ul.comment-list li.comment:first-child { margin-top: 0; }
+.instagram_gallery.standard li ul.comment-list li.comment .meta-header .author { }
+.instagram_gallery.standard li ul.comment-list li.comment .meta-header .date { }
+.instagram_gallery.standard li ul.comment-list li.comment .message { margin-bottom: 0; }
+.instagram_gallery.standard li ul.comment-list li.comment .date { font-size: 9px; line-height: 16px; color: #a1a1a1; }
+.instagram_gallery.standard li ul.comment-list li.read_more { min-height: 1px; font-size: 9px; line-height: 16px; color: #a1a1a1; padding: 0 10px 0 72px; margin: 5px 0 -5px 0; border-top: none; display: block; }
+.instagram_gallery.standard li ul.comment-list li.read_more a { color: #a1a1a1; }
+
+
+
+.instagram_gallery.standard li ul.album-photos { display: none; }
+#instagram_gallery li:hover ul { display: block; }
+li.type-album:hover + ul.album-photos, ul.album-photos:hover { display: block; }
+
+/* CLEARFIX */
+.clearfix:before,
+.clearfix:after { content: ' '; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; /*For IE 6/7 only*/ }
+
+/* TYPO3 FIXES */
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+.align-justify { text-align: justify; }
+.float-left { float: left; }
+.float-right { float: right; }
