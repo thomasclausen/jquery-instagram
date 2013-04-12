@@ -27,13 +27,17 @@
 				var output = '';
 
 				output += '<li id="photo-' + this.id + '" class="photo type-photo avatar-size-' + options.avatar_size + '">';
-					if (options.avatar_size == 'low_resolution') {
-						output += '<a href="' + this.images.standard_resolution.url + '" title="' + this.caption.text + '" data-lightbox="photo-' + this.id + '"><img src="' + this.images.low_resolution.url + '" /></a><br />';
-					} else if (options.avatar_size == 'thumbnail') {
-						output += '<a href="' + this.images.standard_resolution.url + '" title="' + this.caption.text + '" data-lightbox="photo-' + this.id + '"><img src="' + this.images.thumbnail.url + '" /></a><br />';
-					} else {
-						output += '<a href="' + this.images.standard_resolution.url + '" title="' + this.caption.text + '" data-lightbox="photo-' + this.id + '"><img src="' + this.images.standard_resolution.url + '" /></a><br />';
+					if (this.caption != null || this.caption != undefined) {
+						var title = ' title="' + this.caption.text + '"';
 					}
+					if (options.avatar_size == 'low_resolution') {
+						var image = this.images.low_resolution.url;
+					} else if (options.avatar_size == 'thumbnail') {
+						var image = this.images.thumbnail.url;
+					} else {
+						var image = this.images.standard_resolution.url;
+					}
+					output += '<a href="' + this.images.standard_resolution.url + '"' + title + ' data-lightbox="photo-' + this.id + '"><img src="' + image + '" /></a>';
 
 					if (this.caption != null || this.caption != undefined) {
 						if (options.caption_length > 0 && this.caption.text.length > options.caption_length) {
@@ -48,7 +52,6 @@
 			});
 		}).complete(function() {
 			$('.instagram-loading', e).fadeOut(800, function() {
-				console.log(options.effect);
 				for (var p = 0; p < e.children('li').length; p++) {
 					if (options.effect == 'none') {
 						e.children('li').eq(p).show();
