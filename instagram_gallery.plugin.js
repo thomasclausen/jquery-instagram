@@ -63,6 +63,7 @@
 						});
 					}
 				}
+				$(this).remove();
 			});
 			if ($.isFunction(options.on_complete)) {
 				options.on_complete.call();
