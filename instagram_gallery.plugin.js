@@ -1,6 +1,6 @@
 (function($) {
 	$.fn.instagram_gallery = function(options) {
-		if (options.id == undefined || options.access_token == undefined) {
+		if (options.id === undefined || options.access_token === undefined) {
 			return;
 		}
 		
@@ -30,9 +30,9 @@
 					if (this.caption != null || this.caption != undefined) {
 						var title = ' title="' + this.caption.text + '"';
 					}
-					if (options.avatar_size == 'low_resolution') {
+					if (options.avatar_size === 'low_resolution') {
 						var image = this.images.low_resolution.url;
-					} else if (options.avatar_size == 'thumbnail') {
+					} else if (options.avatar_size === 'thumbnail') {
 						var image = this.images.thumbnail.url;
 					} else {
 						var image = this.images.standard_resolution.url;
@@ -53,9 +53,9 @@
 		}).complete(function() {
 			$('.instagram-loading', e).fadeOut(800, function() {
 				for (var p = 0; p < e.children('li').length; p++) {
-					if (options.effect == 'none') {
+					if (options.effect === 'none') {
 						e.children('li').eq(p).show();
-					} else if (options.effect == 'fade') {
+					} else if (options.effect === 'fade') {
 						e.children('li').eq(p).delay(p*options.timeout).fadeIn(options.speed);
 					} else {
 						e.children('li').eq(p).delay(p*options.timeout).slideDown(options.speed, function() {
@@ -92,15 +92,15 @@
 				return 'F&aring; sekunder siden';
 			} else if (time_difference < 60) {
 				return Math.round(time_difference) + ' sekunder siden';
-			} else if (Math.round(time_difference/60) == 1) {
+			} else if (Math.round(time_difference/60) === 1) {
 				return Math.round(time_difference/60) + ' minut siden';
 			} else if (Math.round(time_difference/60) < 60) {
 				return Math.round(time_difference/60) + ' minutter siden';
-			} else if (Math.round(time_difference/(60*60)) == 1) {
+			} else if (Math.round(time_difference/(60*60)) === 1) {
 				return Math.round(time_difference/(60*60)) + ' time siden';
 			} else if (Math.round(time_difference/(60*60)) < 24) {
 				return Math.round(time_difference/(60*60)) + ' timer siden';
-			} else if (Math.round(time_difference/(60*60*24)) == 1) {
+			} else if (Math.round(time_difference/(60*60*24)) === 1) {
 				return Math.round(time_difference/(60*60*24)) + ' dag siden';
 			} else if (Math.round(time_difference/(60*60*24)) <= 10) {
 				return Math.round(time_difference/(60*60*24)) + ' dage siden';
