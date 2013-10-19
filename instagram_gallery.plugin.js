@@ -27,7 +27,7 @@
 				var output = '';
 
 				output += '<li id="photo-' + this.id + '" class="photo type-photo avatar-size-' + options.avatar_size + '">';
-					if (this.caption != null || this.caption != undefined) {
+					if (this.caption != undefined) {
 						var title = ' title="' + this.caption.text + '"';
 					}
 					if (options.avatar_size === 'low_resolution') {
@@ -39,7 +39,7 @@
 					}
 					output += '<a href="' + this.images.standard_resolution.url + '"' + title + ' data-lightbox="photo-' + this.id + '"><img src="' + image + '" /></a>';
 
-					if (this.caption != null || this.caption != undefined) {
+					if (this.caption != undefined) {
 						if (options.caption_length > 0 && this.caption.text.length > options.caption_length) {
 							output += '<div class="caption">Beskrivelse: ' + modText(this.caption.text.substring(0, options.caption_length)) + '...</div>';
 						} else {
