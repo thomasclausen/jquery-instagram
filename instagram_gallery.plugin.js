@@ -13,6 +13,11 @@
 			effect: 'slide', // slide | fade | none
 			avatar_size: 'thumbnail', // low_resolution | thumbnail | standard_resolution
 			caption_length: 200, // Any amount you like. Above 0 shortens the message length
+			text_labels: {
+				description: 'Beskrivelse',
+				days: ['S&oslash;ndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'L&oslash;rdag'],
+                months: ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december']
+			},
 			on_complete: null
 		}, options);
 
@@ -41,9 +46,9 @@
 
 					if (this.caption != undefined) {
 						if (options.caption_length > 0 && this.caption.text.length > options.caption_length) {
-							output += '<div class="caption">Beskrivelse: ' + modText(this.caption.text.substring(0, options.caption_length)) + '...</div>';
+							output += '<div class="caption">' + options.text_labels.description + ': ' + modText(this.caption.text.substring(0, options.caption_length)) + '...</div>';
 						} else {
-							output += '<div class="caption">Beskrivelse: ' + modText(this.caption.text) + '</div>';
+							output += '<div class="caption">' + options.text_labels.description + ': ' + modText(this.caption.text) + '</div>';
 						}
 					}
 				output += '</li>';
@@ -83,10 +88,9 @@
 			return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 		}
 		function timeToHuman(time) {
-			var timestamp = new Date(time*1000);
-			dateString = timestamp.toGMTString();
-	
-			var time_difference = Math.round(new Date().getTime()/1000)-time;
+			var timestamp = new Date(time*1000),
+                dateString = timestamp.toGMTString(),
+                time_difference = Math.round(new Date().getTime()/1000)-time;
 			
 			if (time_difference < 10) {
 				return 'F&aring; sekunder siden';
@@ -105,14 +109,7 @@
 			} else if (Math.round(time_difference/(60*60*24)) <= 10) {
 				return Math.round(time_difference/(60*60*24)) + ' dage siden';
 			} else {
-				var days = new Array('S&oslash;ndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'L&oslash;rdag');
-				var months = new Array('januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december');
-	
-				var day = timestamp.getDay();
-				var day_no = timestamp.getDate();
-				var month = timestamp.getMonth();
-				var year = timestamp.getFullYear();
-				return days[day] + ' d. ' + day_no + '. ' + months[month] + ' ' + year;
+				return options.text_labels.days[timestamp.getDay()] + ' d. ' + timestamp.getDate() + '. ' + options.text_labels.months[timestamp.getMonth()] + ' ' + timestamp.getFullYear();
 			}
 		}
 	};
