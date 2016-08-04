@@ -1,8 +1,0 @@
-.lbLoading { background: #fff url(../images/loading.gif) no-repeat center; }
-
-#mbImage iframe { overflow: hidden !important; }
-#lbImage iframe { overflow: hidden !important; }
-
-#lbPrevLink:hover { background: transparent url(../images/slimbox-prev.gif) no-repeat 0% 50%; }
-#lbNextLink:hover { background: transparent url(../images/slimbox-next.gif) no-repeat 100% 50%; }
-#lbCloseLink { background: transparent url(../images/slimbox-close.gif) no-repeat center; }
